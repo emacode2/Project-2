@@ -8,6 +8,12 @@ It will be created using thesame style and functionality as craigslist, with 2 n
 
 It will use 2 non-user models. A user will post an event; a run for example, set to meet at a common public area and time. Other users can reply by commenting under each post.
 
-The posts will be full CRUD and the comments will have create, read and update.
+The posts will be full CRUD with
+title
+description
+status.
+and the comments will have create, read and update.
+description
+status
 
 THe app will be deployed to Heroku.
