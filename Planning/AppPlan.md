@@ -1,6 +1,6 @@
 # APPLICATION PLAN
 
-• This is a full CRUD application built with `Mongoose`, `Express`, `Handlebars` and `Node.js`.
+• This is a full CRUD application(forum) built with `Mongoose`, `Express`, `Handlebars` and `Node.js`.
 
 ## Name CommuniFit
 

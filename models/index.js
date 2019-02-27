@@ -1,8 +1,8 @@
 const mongoose = require("../db/connection");
-const Post = new mongoose.schemma({
+
+const Post = new mongoose.Schema({
   title: String,
   content: String
 });
-const comment = new mongoose.schemma({
-  content: String
-});
+
+module.exports = mongoose.model("Post", Post);
