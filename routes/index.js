@@ -6,6 +6,7 @@ const postController = require("../controllers/post.js");
 
 router.get("/", (req, res) => {
   Post.find({}).then(items => {
+    console.log(items);
     res.render("index", {
       items
     });
@@ -13,6 +14,6 @@ router.get("/", (req, res) => {
 });
 
 router.get("/new", postController.new);
-//router.post("/", postController.create);
+router.post("/", postController.create);
 
 module.exports = router;

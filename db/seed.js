@@ -10,7 +10,7 @@ Post.remove({}).then(() => {
     {
       title: " Three mile walk",
       content:
-        " Interested in a 3 mile walk? Meet tommorrow at 5pm at the town center"
+        " Interested in a 3 walk? Meet tommorrow at 5pm at the town center"
     }
   ]).then(posts => {
     console.log(`new posts added:\n${posts}`);

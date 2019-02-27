@@ -3,7 +3,7 @@ module.exports = {
   new: (req, res) => {
     res.render("new");
   },
-  Create: (req, res) => {
+  create: (req, res) => {
     Post.create({
       title: req.body.title,
       content: req.body.content
