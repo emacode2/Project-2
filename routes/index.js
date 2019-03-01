@@ -5,18 +5,15 @@ const postController = require("../controllers/post.js");
 //router.use(require("./post.js"));
 
 router.get("/", (req, res) => {
-  Post.find({}).then(post => {
-    console.log(post);
+  Post.find({}).then(items => {
+    console.log(items);
     res.render("index", {
-      post
+      items
     });
   });
 });
 
 router.get("/new", postController.new);
 router.post("/", postController.create);
-// router.get("/:id", postController.create);
-router.put("/:id", postController.update);
-router.delete("/:id", postController.delete);
 
 module.exports = router;
