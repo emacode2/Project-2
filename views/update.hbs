@@ -1,0 +1,19 @@
+{{#if items}}
+<ul>
+    {{#each items}}
+    <li>
+        <form method="POST" action="/tweet/{{id}}?_method=PUT" class="row">
+            <p class="input-field inline col s10">
+                <label for="content"></label>
+                <input type="text" name="content" id="">
+            </p>
+            <p class="input-field inline col s2">
+                <input class="btn" type="submit" value="Submit">
+            </p>
+        </form>
+
+    </li>
+    {{/each}}
+</ul>
+{{/if}}
+<a href="/new">update</a>
