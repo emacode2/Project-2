@@ -11,29 +11,27 @@ module.exports = {
       res.redirect("/");
     });
   },
-
   show: function(req, res) {
-    Post.findOne({ _id: req.params.id }).exec(function(err, post) {
-      res.render("post/show", reports);
-    });
+    console.log("hello there");
+    Post.findById(req.params.id).then(post => {
+       res.render("post/show", { post });
+     });
   }
+  //   update: function(req, res) {
+  //     const { title, content } = req.body;
+
+  //     Post.findByIdAndUpdate(req.params.id, {
+  //       title,
+  //       content
+  //     }).then(item => {
+  //       res.redirect(`/item/${post._id}`);
+  //     });
+  //   }
+  // };
+
+  // //   delete: function(req, res) {
+  // //     Post.findOneAndRemove({ _id: req.params.id }).then(post => {
+  // //       res.redirect("/");
+  // //     });
+  // //   }
 };
-
-//   update: function(req, res) {
-//     let { content } = req.body;
-//     Post.findOne({ _id: req.params.id }).then(post => {
-//       post.comments.push({
-//         content
-//       });
-//       post.save(err => {
-//         res.redirect(`/post/${post._id}`);
-//       });
-//     });
-//   },
-
-//   delete: function(req, res) {
-//     Post.findOneAndRemove({ _id: req.params.id }).then(post => {
-//       res.redirect("/");
-//     });
-//   }
-//};

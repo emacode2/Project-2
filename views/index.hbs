@@ -1,8 +1,9 @@
-{{#if items}}
+{{#if posts}}
 <ul>
-    {{#each items}}
+    {{#each posts}}
     <li>
-        <p>{{title}}</p>
+        <a href="/show">{{title}}</a>
+
         <p>{{content}}</p>
     </li>
     {{/each}}

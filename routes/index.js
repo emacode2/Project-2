@@ -1,25 +1,21 @@
 const express = require("express");
 const router = express.Router();
-router.use("/", require("./application.js"));
-router.use("/post", require("./post"));
+const Post = require("../models/index");
+const postController = require("../controllers/post.js");
 
-router.all("*", (req, res) => {
-  res.status(400).send();
+router.get("/", (req, res) => {
+  Post.find({}).then(posts => {
+    res.render("index", {
+      posts
+    });
+  });
 });
 
+router.get("/new", postController.new);
+router.post("/", postController.create);
+router.get("/:id", postController.show);
+// router.put("/:id", postController.update);
+// router.delete("/:id", postController.delete);
+router.use("/post", require("./post.js"));
+
 module.exports = router;
-
-// const Post = require("../models/index");
-// const postController = require("../controllers/post.js");
-// ***router.post(require("./post.js"));***
-
-// router.get("/", (req, res) => {
-//   Post.find({}).then(items => {
-//     console.log(items);
-//     res.render("index", {
-//       items
-//     });
-//   });
-// });
-
-// module.exports = router;

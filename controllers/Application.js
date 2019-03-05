@@ -8,5 +8,8 @@ module.exports = {
       .then(post => {
         res.render("app/index", { post });
       });
+  },
+  show: (req, res) => {
+    res.render("show");
   }
 };
