@@ -36,12 +36,12 @@ module.exports = {
     Post.findOneAndUpdate({ _id: req.params.id }, req.body).then(post => {
       res.render("post/edit", { post });
     });
+  },
+  delete: function(req, res) {
+    Post.remove({ _id: req.params.id }).then(post => {
+      res.redirect("/");
+    });
   }
-  // delete: function(req, res) {
-  //   Post.remove({ _id: req.params.id }).then(post => {
-  //     res.redirect("/");
-  //   });
-  // }
 };
 
 // res.redirect(`/post/${post._id}`);
