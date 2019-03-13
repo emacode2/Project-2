@@ -17,26 +17,26 @@ module.exports = {
     Post.findById(req.params.id).then(post => {
       res.render("post/show", { post });
     });
+  },
+  update: function(req, res) {
+    console.log("🕰", req.body);
+
+    Post.findOneAndUpdate(
+      {
+        _id: req.params.id
+      },
+      req.body
+    ).then(post => {
+      res.redirect(`/post/${post._id}`);
+    });
+  },
+  edit: function(req, res) {
+    console.log("😃", req.body);
+
+    Post.findOneAndUpdate({ _id: req.params.id }, req.body).then(post => {
+      res.render("post/edit", { post });
+    });
   }
-  // update: function(req, res) {
-  //   console.log("🕰", req.body);
-
-  //   Post.findOneAndUpdate(
-  //     {
-  //       _id: req.params.id
-  //     },
-  //     req.body
-  //   ).then(post => {
-  //     res.redirect(`/post/${post._id}`);
-  //   });
-  // },
-  // edit: function(req, res) {
-  //   console.log("😃", req.body);
-
-  //   Post.findOneAndUpdate({ _id: req.params.id }, req.body).then(post => {
-  //     res.render("post/edit", { post });
-  //   });
-  // },
   // delete: function(req, res) {
   //   Post.remove({ _id: req.params.id }).then(post => {
   //     res.redirect("/");
