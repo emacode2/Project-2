@@ -1,0 +1,14 @@
+{{!-- <h1>hello from show</h1> --}}
+
+
+
+
+<h2>{{post.title}}</h2>
+<p>{{post.content}}</p>
+
+<a href="/post/{{post.id}}/edit">edit</a>
+<a href="/" class="card-link">View More</a>
+
+<form action="/post/{{post.id}}?_method=DELETE" method="post">
+    <input type="submit" value="Delete">
+</form>
