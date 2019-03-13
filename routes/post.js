@@ -9,7 +9,7 @@ router.get("/:id", postController.show);
 router.put("/:id/edit", postController.update);
 router.get("/:id/edit", postController.edit);
 router.put("/:id/edit", postController.update);
-outer.put("/:id", postController.update);
+router.put("/:id", postController.update);
 router.delete("/:id", postController.delete);
 
 module.exports = router;
