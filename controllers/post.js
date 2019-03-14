@@ -41,6 +41,17 @@ module.exports = {
     Post.remove({ _id: req.params.id }).then(post => {
       res.redirect("/");
     });
+  },
+  comment: function(req, res) {
+    const comment = {
+      content: req.body.content
+    };
+    Post.findOneAndUpdate(
+      { _id: req.params.id },
+      { $push: { feedbacks: feedback } }
+    ).then(post => {
+      res.redirect(`/post/${post._id}`);
+    });
   }
 };
 

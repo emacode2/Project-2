@@ -6,6 +6,8 @@
     <h2><a href="/post/{{id}}">{{title}}</a></h2>
 
     <p> {{content}}</p>
+    <span class="post_comments" href="/post/{{ comments.length }}/comments"></span>
+    {{!-- <span class="post_comments">{{ comments.length }} Comments</span> --}}
     <div class="card-footer">
         <a href="/" class="card-link"></a>
     </div>
